@@ -1,35 +1,28 @@
- import os 
 def main():
- 
-directory = input("Enter the directory that you want to save the file : ") filename = input("Enter the filename : ")
- 
-name = input("Enter your name : ") address = input("Enter your address : ")
- 
-phone_number = input("Enter your phone number : ") #checking if the
- directory exists
- 
-if os.path.isdir(directory):
- 
-#createing and opening the file to write
- 
-writeFile = open(os.path.join(directory,filename),'w') #writing the data by comma seperated writeFile.write(name+','+address+','+phone_number+'\n') #close the file after writing
- is done
- 
-writeFile.close() print("File contents:")
- 
-#reading the file for proof of storing
- 
-readFile = open(os.path.join(directory,filename),'r') for line in 
-readFile:
- 
-print(line)
- 
-readFile.close()
- 
-else:
- 
-print("Sorry that directory is not exists...")
- 
-main()
- 
+   # Define the dictionary of stocks
+   stocks = {
+       "AAPL": 150.25,
+       "GOOGL": 2500.50,
+       "MSFT": 300.75,
+       "AMZN": 3500.00,
+       "FB": 350.25,
+       "TSLA": 650.75,
+       "NFLX": 600.50,
+       "NVDA": 800.00,
+       "JPM": 150.75,
+       "BAC": 40.25
+   }
 
+   # Ask the user for a ticker symbol
+   ticker_symbol = input("Enter a ticker symbol: ")
+
+   # Search for the ticker symbol in the dictionary
+   if ticker_symbol in stocks:
+       stock_price = stocks[ticker_symbol]
+       print(f"The stock price for {ticker_symbol} is ${stock_price:.2f}")
+   else:
+       print("Ticker symbol not found.")
+
+
+# Run the program
+main()
